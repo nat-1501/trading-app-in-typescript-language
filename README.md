@@ -1,0 +1,1 @@
+# trading-app-in-typescript-language
