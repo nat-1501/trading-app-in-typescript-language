@@ -1,23 +1,16 @@
-export class Negociacao {
-    #data;
-    #quantidade;
-    #valor;
+import { Negociacao } from './negociacao.js';
 
-    constructor(data, quantidade, valor) {
-        this.#data = data;
-        this.#quantidade = quantidade;
-        this.#valor = valor;
+export class Negociacoes {
+    private negociacoes: Negociacao[] = [];
+
+    adiciona(negociacao: Negociacao) {
+        this.negociacoes.push(negociacao);
     }
 
-    get data() {
-        return this.#data;
+    lista(): readonly Negociacao[] {
+        return this.negociacoes;
     }
 
-    get quantidade() {
-        return this.#quantidade
-    }
+    
 
-    get valor() {
-        return this.#valor;
-    }
 }
