@@ -26,5 +26,5 @@ export abstract class View <T> {
 
 }
 
-}
+
 
