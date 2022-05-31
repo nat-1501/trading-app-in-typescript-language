@@ -15,7 +15,7 @@ export class NegociacaoController {
     private readonly DOMINGO = 0;
 
 
-    constructor(seletor: string) {
+    constructor() {
         this.inputData = document.querySelector('#data') as HTMLInputElement;
         this.inputQuantidade = document.querySelector('#quantidade') as HTMLInputElement;
         this.inputValor = document.querySelector('#valor') as HTMLInputElement;
