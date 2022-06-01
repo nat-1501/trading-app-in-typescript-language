@@ -1,4 +1,4 @@
-import { NegociacaoController } from './src/controllers/negociacao-controller.js';
+import { NegociacaoController } from './controllers/negociacao-controller.js';
 
 const controller = new NegociacaoController();
 const form = document.querySelector('.form');
@@ -10,5 +10,3 @@ if (form) {
 } else {
     throw Error('Não foi possível inicializar a aplicação. Verifique se o form existe.');
 }
-
-

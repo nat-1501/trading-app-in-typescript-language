@@ -1,41 +1,40 @@
-import { Negociacoes } from "../models/negociacoes.js";
-import { View } from "./view.js";
+import { Negociacoes } from '../models/negociacoes.js';
+import { View } from './view.js';
 
-export class NegociacoesView extends View <Negociacoes>{
+export class NegociacoesView extends View<Negociacoes> {
 
     protected template(model: Negociacoes): string {
-        return ` 
-            <table class="table table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th>DATA</th>
-                        <th>QUANTIDADE</th>
-                        <th>VALOR</th>                    
-                    </tr>
-                </thead>
-
-                <tbody>
-                    ${model.lista().map(negociacao => {
-                      return `
+        return `
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>DATA</th>
+                    <th>QUANTIDADE</th>
+                    <th>VALOR</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${model.lista().map(negociacao => {
+                    return `
                         <tr>
-                            <td>
-                            ${this.formatar(negociacao.data)}
+                            <td>${this.formatar(negociacao.data)}
                             </td>
-                            <td>${negociacao.quantidade}</td>
-                            <td>${negociacao.valor}</td>
+                            <td>
+                                ${negociacao.quantidade}
+                            </td>
+                            <td>
+                                ${negociacao.valor}
+                            </td>
                         </tr>
-                      
-                      `;
-
-                    }).join('')}
-
-                </tbody>
-            </table>
+                    `;
+                }).join('')}
+            </tbody>
+        </table>
         `;
     }
 
-    public formatar(data: Date): string {
+    private formatar(data: Date): string {
         return new Intl.DateTimeFormat()
-        .format(data);
+            .format(data);
     }
 }
